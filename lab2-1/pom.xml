@@ -2,23 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Labs_Potoki</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>Labs_Potoki</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>lab1-1</module>
-        <module>lab1-2</module>
-        <module>lab1-3</module>
-        <module>lab1-4</module>
-        <module>lab1-5</module>
-        <module>lab1-6</module>
-        <module>lab2-1</module>
-        <module>lab2-2</module>
-
-    </modules>
+    <artifactId>lab2-1</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

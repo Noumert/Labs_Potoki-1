@@ -11,8 +11,12 @@
         <module name="lab1-4" />
         <module name="lab1-3" />
         <module name="lab1-2" />
+        <module name="lab2-1" />
         <module name="lab1-1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lab2-2" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
