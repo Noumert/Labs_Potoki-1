@@ -12,7 +12,8 @@ public class StripedAndFoxMult {
         double[][] result = new double[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                result[i][j] = (random.nextInt(20)-10);
+//                result[i][j] = (random.nextInt(20)-10);
+                result[i][j]=1;
             }
         }
         return result;
@@ -45,9 +46,13 @@ public class StripedAndFoxMult {
 
 
         startTime = System.currentTimeMillis();
-        stripedMult.multMatrixs(matrix1,matrix2,8);
+        Result result1 = stripedMult.multMatrixs(matrix1,matrix2,8);
         endTime = System.currentTimeMillis();
         System.out.println("8 потоки розмірність матриць 500 час: " + (endTime-startTime) + "ms");
+//        System.out.println(Arrays.deepToString(matrix2).replace("], [","\n")
+//                .replace("[[","")
+//                .replace("]]",""));
+
 
         System.out.println("//////////////////////////////");
 
@@ -59,10 +64,13 @@ public class StripedAndFoxMult {
         endTime = System.currentTimeMillis();
         System.out.println("1 потоки розмірність матриць 1500 час: " + (endTime-startTime) + "ms");
 
+
         startTime = System.currentTimeMillis();
-        stripedMult.multMatrixs(matrix1,matrix2,4);
+        Result result2 = stripedMult.multMatrixs(matrix1,matrix2,4);
         endTime = System.currentTimeMillis();
         System.out.println("4 потоки розмірність матриць 1500 час: " + (endTime-startTime) + "ms");
+//        System.out.println("gfggggggggggggggggggggggggg");
+//        System.out.println(result2.result[1499][1499]);
 
 
         startTime = System.currentTimeMillis();

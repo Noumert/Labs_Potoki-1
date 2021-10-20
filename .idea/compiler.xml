@@ -8,11 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="lab1-6" />
         <module name="lab1-5" />
+        <module name="lab3-3" />
         <module name="lab1-4" />
         <module name="lab1-3" />
+        <module name="lab3-1" />
         <module name="lab1-2" />
         <module name="lab2-1" />
         <module name="lab1-1" />
+        <module name="Lab3-2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
