@@ -10,6 +10,7 @@
         <module name="lab1-5" />
         <module name="lab3-3" />
         <module name="lab1-4" />
+        <module name="lab4-1" />
         <module name="lab1-3" />
         <module name="lab3-1" />
         <module name="lab1-2" />
@@ -19,6 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="KR" target="11" />
       <module name="lab2-2" target="11" />
     </bytecodeTargetLevel>
   </component>
