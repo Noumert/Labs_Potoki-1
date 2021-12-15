@@ -16,7 +16,7 @@ public class MainSMO {
         SMOProducer smoProducer = new SMOProducer(smoQueueList,CUSTOMERS_LIMIT,smoQueueList.size());
         forkJoinPool1.execute(smoProducer);
 
-        ForkJoinPool forkJoinPool2 = new ForkJoinPool(4);
+        ForkJoinPool forkJoinPool2 = new ForkJoinPool(8);
         SMOConsumer smoConsumer = new SMOConsumer(smoQueueList,CUSTOMERS_LIMIT);
         forkJoinPool2.execute(smoConsumer);
 

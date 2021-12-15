@@ -8,42 +8,32 @@ import java.util.concurrent.RecursiveAction;
 
 public class RecursiveAnalyzer extends RecursiveAction {
 
-    private final String[] words;
-    Map<Integer, Integer> statistic;
+    private final Integer[] a;
+    List<Integer> statistic;
     private final int THRESHOLD;
 
-    public RecursiveAnalyzer(String[] words, Map<Integer, Integer> statistic,int threads) {
-        this.words = words;
-        this.statistic = statistic;
+    public RecursiveAnalyzer(Integer[] a,int threads) {
+        this.a = a;
         this.THRESHOLD = threads;
     }
 
     @Override
     protected void compute() {
-        if (words.length > THRESHOLD) {
+        if (a.length > THRESHOLD) {
             ForkJoinTask.invokeAll(createSubtasks());
         } else {
-            processing(words);
+            processing(a);
         }
     }
 
     private List<RecursiveAnalyzer> createSubtasks() {
         List<RecursiveAnalyzer> subtasks = new ArrayList<>();
-        subtasks.add(new RecursiveAnalyzer(Arrays.copyOfRange(words, 0, words.length / 2), statistic,THRESHOLD));
-        subtasks.add(new RecursiveAnalyzer(Arrays.copyOfRange(words, words.length / 2, words.length), statistic,THRESHOLD));
+        subtasks.add(new RecursiveAnalyzer(Arrays.copyOfRange(a, 0, a.length / 2),THRESHOLD));
+        subtasks.add(new RecursiveAnalyzer(Arrays.copyOfRange(a, a.length / 2, a.length),THRESHOLD));
         return subtasks;
     }
 
-    private void processing(String[] subWords) {
-        Map<Integer,Integer> lStatistic = new ConcurrentHashMap<>();
-        Arrays.stream(subWords).forEach(word -> {
-            Integer wLength = word.length();
-            lStatistic.computeIfPresent(wLength, (key,value)-> value + 1);
-            lStatistic.putIfAbsent(word.length(), 1);
-        });
-        lStatistic.forEach((key,value) -> {
-            statistic.computeIfPresent(key, (key1,value1)-> value1 + value);
-            statistic.putIfAbsent(key, value);
-        });
+    private void processing(Integer[] subWords) {
+        System.out.println("Complete task"+a);
     }
 }
